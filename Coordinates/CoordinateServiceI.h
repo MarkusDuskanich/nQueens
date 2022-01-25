@@ -1,6 +1,6 @@
 #ifndef NQUEENS_COORDINATESERVICEI_H
 #define NQUEENS_COORDINATESERVICEI_H
-
+#include <utility>
 class CoordinateServiceI{
 public:
     virtual std::pair<int, int> getNextCoordinate() = 0;

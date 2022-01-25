@@ -18,7 +18,7 @@ void RandomUniqueCoordinateService::fillPoolWithAscendingCoordinates() {
 
 void RandomUniqueCoordinateService::throwErrorIfPoolFilled() {
     if(!poolIsEmpty())
-        throw std::runtime_error("Coordinate poll is not empty");
+        throw std::runtime_error("Coordinate pool is not empty");
 }
 
 void RandomUniqueCoordinateService::shuffle() {
@@ -46,7 +46,7 @@ std::pair<int, int> RandomUniqueCoordinateService::front(){
 
 void RandomUniqueCoordinateService::throwErrorIfPoolEmpty() {
     if(poolIsEmpty())
-        throw std::runtime_error("Coordinate poll is empty");
+        throw std::runtime_error("Coordinate pool is empty");
 }
 
 void RandomUniqueCoordinateService::pop_front() {
