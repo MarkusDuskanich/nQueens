@@ -1,7 +1,7 @@
-#ifndef NQUEENS_COORDINATESERVICEI_H
-#define NQUEENS_COORDINATESERVICEI_H
+#ifndef NQUEENS_ICOORDINATESERVICE_H
+#define NQUEENS_ICOORDINATESERVICE_H
 #include <utility>
-class CoordinateServiceI{
+class ICoordinateService{
 public:
     virtual std::pair<int, int> getNextCoordinate() = 0;
     virtual void fillCoordinatePool() = 0;
@@ -9,4 +9,4 @@ public:
 };
 
 
-#endif //NQUEENS_COORDINATESERVICEI_H
+#endif //NQUEENS_ICOORDINATESERVICE_H

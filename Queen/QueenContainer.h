@@ -2,7 +2,7 @@
 #define NQUEENS_QUEENCONTAINER_H
 
 #include "Queen.h"
-#include "../Coordinates/CoordinateServiceI.h"
+#include "../Coordinates/ICoordinateService.h"
 #include <stdexcept>
 
 class QueenContainer{

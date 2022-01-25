@@ -5,10 +5,10 @@
 #include <algorithm>
 #include <deque>
 #include <chrono>
-#include "CoordinateServiceI.h"
+#include "ICoordinateService.h"
 #include <stdexcept>
 
-class  RandomUniqueCoordinateService : public CoordinateServiceI{
+class  RandomUniqueCoordinateService : public ICoordinateService{
 private:
     std::deque<int> XCoordinates;
     std::deque<int> YCoordinates;

@@ -1,7 +1,7 @@
 #include "Board.h"
 
-Board::Board(int dimension, QueenContainer &queens, CoordinateServiceI &coordinateService) : queens(queens),
-             diagonals(dimension), coordinateService(coordinateService) {
+Board::Board(int dimension, QueenContainer &queens, ICoordinateService &coordinateService) : queens(queens),
+                                                                                             diagonals(dimension), coordinateService(coordinateService) {
     if(dimension < 4)
         throw std::runtime_error("Dimension of bord must be >= 4");
     initialize();

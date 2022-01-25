@@ -5,16 +5,16 @@
 #include <chrono>
 #include <thread>
 #include "../Queen/Queen.h"
-#include "../Coordinates/CoordinateServiceI.h"
+#include "../Coordinates/ICoordinateService.h"
 #include "../Queen/QueenContainer.h"
 #include "../Diagonal/Diagonal.h"
-#include "../Coordinates/CoordinateServiceI.h"
+#include "../Coordinates/ICoordinateService.h"
 
 class Board{
 private:
     QueenContainer &queens;
     Diagonal diagonals;
-    CoordinateServiceI &coordinateService;
+    ICoordinateService &coordinateService;
 
     void addToDiagonals(Queen &q1, Queen &q2);
     static void swapYCoordinate(Queen &q1, Queen &q2);
@@ -23,7 +23,7 @@ private:
 
 public:
 
-    Board(int dimension, QueenContainer &queens, CoordinateServiceI &coordinateService);
+    Board(int dimension, QueenContainer &queens, ICoordinateService &coordinateService);
 
     Queen& getQueen(int index);
     int size();
