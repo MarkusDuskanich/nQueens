@@ -54,6 +54,3 @@ bool NQueensSolver::areConflictsIncreased(int conflictsBeforeSwap, int conflicts
 int NQueensSolver::getIterations() const {
     return iterations;
 }
-
-
-
