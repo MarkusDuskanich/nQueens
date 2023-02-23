@@ -2,6 +2,7 @@
 #include <vector>
 #include <windows.h>
 #include <chrono>
+#include <random>
 
 using namespace std;
 #define boardSize 100000
@@ -22,10 +23,7 @@ int validDiagonals = 0;
 
 int getNum(vector<int>& v)
 {
-	int n = v.size();
-	int index = rand() % n;
-	int num = v[index];
-	swap(v[index], v[n - 1]);
+	int num = v[v.size() - 1];
 	v.pop_back();
 	return num;
 }
@@ -84,6 +82,11 @@ void removeFromDiagonal(int x, int y, vector<int>& diagonals) {
 	removeQueenAndUpdateValidDiagonals(posDiagonalIndexOf(x, y), diagonals);
 }
 
+long long int getSeed() {
+	static int seedOffset = 0;
+	long long int seed = std::chrono::high_resolution_clock::now().time_since_epoch().count() + seedOffset++;
+	return seed;
+}
 
 void generateRandom(int n, vector<Queen>& queens, vector<int>& diagonals)
 {
@@ -93,6 +96,9 @@ void generateRandom(int n, vector<Queen>& queens, vector<int>& diagonals)
 		v[i] = i;
 		v2[i] = i;
 	}
+	std::default_random_engine engine(getSeed());
+	std::shuffle(v.begin(), v.end(), engine);
+	std::shuffle(v2.begin(), v2.end(), engine);
 
 	int y = 0;
 	while (v.size()) {
@@ -122,9 +128,7 @@ bool solved(vector<int>& diagonals) {
 	return validDiagonals == diagonals.size();
 }
 
-int main() {
-	srand(time(NULL));
-
+int main3() {
 	auto tp1 = chrono::steady_clock::now();
 
 	vector<Queen> queens;
